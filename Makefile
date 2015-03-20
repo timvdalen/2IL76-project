@@ -6,7 +6,7 @@ once.%:
 	pdflatex $(main)
 
 clean:
-	rm -f $(main).{aux,log,toc,out}
+	rm -f $(main).{aux,log,toc,out,nav,snm}
 
 remove: clean
 	rm -f $(main).pdf
