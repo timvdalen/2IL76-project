@@ -1,0 +1,36 @@
+\begin{frame}{Known observer placement}
+	\begin{itemize}
+		\item Compute the visibility map
+		\item Compute the coverage map
+		\item Construct weighted graph of grid connections
+		\item Find minimum-cost path  using Dijkstra
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Unknown observer placement}
+	\begin{itemize}
+		\item Problem becomes finding a good guess for O
+		\item Assuming a rational opponent
+		\item Assuming a budget of $k$ observers
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Unknown observer placement}{Strategies}
+	\begin{itemize}
+		\only<1>{
+			\item Topology-based placement
+				\begin{itemize}
+					\item Find local maxima in the map
+					\item Use contours to find maxima on different hills
+					\item Place observers there
+				\end{itemize}
+		}
+		\only<2>{
+			\item Coverage-based placement
+				\begin{itemize}
+					\item Compute visibility map
+					\item Place observers to cover as much terrain as possible
+				\end{itemize}
+		}
+	\end{itemize}
+\end{frame}
