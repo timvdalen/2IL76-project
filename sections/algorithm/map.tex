@@ -1,9 +1,30 @@
 \begin{frame}{Simplification}
-
+	\begin{itemize}
+		\item Construct a quad tree
+			\only<1> {
+				\includegraphics[height=0.5\textheight]{algorithm-simplification-gridconstruction}
+			}
+		\item Approximate terrain surface
+			\only<2> {
+				\includegraphics[height=0.5\textheight]{algorithm-simplification-quadtree}
+			}
+			\only<3> {
+				\includegraphics[height=0.5\textheight]{algorithm-simplification-dual}
+			}
+		%TODO: Notes on how this works
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Computing the map}
-
+	\begin{itemize}
+		\item Compute the visibility map restricted to part of the tree
+			\only<1> {
+				\includegraphics[height=0.5\textheight]{algorithm-map-shadow}
+			}
+		\item Compute the occluder set
+		\item approximate $\tilde{V}_u$
+		%TODO: Notes on how this works
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Using the GPU}
