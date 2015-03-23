@@ -1,13 +1,84 @@
 %TODO: Find a better way to compare the approaches
 
 \begin{frame}{Learning based}
-
+	Most occluded paths over a terrain tend to follow similar trajectories.  \\
+	Idea: Compute highly occluded paths between pairs of points and make a sparse network of the common sub-paths
+	
 \end{frame}
 
-\begin{frame}{Learning based}{Result}
+\begin{frame}{Learning based}
+	Their algorithm for the creating the learning based network follows three stages: 
+	\begin{enumerate}
+		\item Compute optimal paths between pair of points
+		\item Identify the sub-paths used by many paths. 
+		\item Make a network of these sub-paths
+	\end{enumerate}
+	
+\end{frame}
+
+\begin{frame}{Learning based stage 1}
+		Pick $n$ points on the bord and for each of these points compute the optimal path to $m$ other points on the border. \\
+		This way we get $nm$ paths. 
+\end{frame}
+
+
+\begin{frame}{Learning stage 1}
 	\centering
-	\includegraphics[height=\textwidth,angle=90]{networks-strategies-learning}
+	\includegraphics[width=0.6\textwidth]{net-leba1.png}
 \end{frame}
+
+\begin{frame}{Learning stage 1}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba2.png}
+\end{frame}
+
+\begin{frame}{Learning stage 1}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba3.png}
+\end{frame}
+
+\begin{frame}{Learning stage 1}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba4.png}
+\end{frame}
+
+\begin{frame}{Learning based stage 2}
+		Find points for which the number of paths passing through extends a threshold. 
+\end{frame}
+
+\begin{frame}{Learning stage 2, threshold = 3}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba5a.png}
+\end{frame} 
+
+
+
+\begin{frame}{Learning stage 2, threshold = 3}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba6a.png}
+\end{frame} 
+
+\begin{frame}{Learning stage 2, threshold = 2}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba5b.png}
+\end{frame} 
+\begin{frame}{Learning stage 2, threshold = 2}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba6b.png}
+\end{frame} 
+
+\begin{frame}{Learning based stage 3}
+		Make the network complete.
+\end{frame}
+\begin{frame}{Learning stage 3}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba7.png}
+\end{frame} 
+
+\begin{frame}{Learning stage 3}
+	\centering
+	\includegraphics[width=0.6\textwidth]{net-leba8.png}
+\end{frame} 
 
 \begin{frame}{Sampling based}
 
