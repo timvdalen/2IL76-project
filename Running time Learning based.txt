@@ -1,0 +1,4 @@
+n * m * algorithm to find the best path between two points. 
+
+n = number of points selected on the boundary
+m = number of destination points selected for each of the points on the boundary. 
