@@ -1,0 +1,35 @@
+\begin{frame}{Approach}
+	\begin{itemize}
+		\item Compute the visibility map once
+		\item Determine a network of occluded paths
+		\item Only calculate connections to the network
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Building the network}
+	\begin{itemize}
+		\item Chosing how to build the network is really important
+		\item Well chosen network results in high-quality paths
+		\item Paths can become really expensive if the network is not well chosen.
+		\item To dense networks result in high computing time for the points on the network where we connect
+		\item A network that is to sparse result in high computing time for the connection between the points and the network
+	\end{itemize}
+
+	\note{
+		A network is well chosen when it closely aligns with the lowest-cost subpaths over the terrain.
+	}
+\end{frame}
+
+\begin{frame}{Strategies}
+	\begin{itemize}
+		\item Sampling based
+		\item Topology based
+		\item Learning based
+	\end{itemize}
+
+	\note{
+		%TODO: Small explanation about all
+
+		Next, we'll run the learning based approach on our running example
+	}
+\end{frame}
