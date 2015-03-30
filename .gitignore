@@ -1,5 +1,7 @@
 presentation.pdf
 
+img2/*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
