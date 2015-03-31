@@ -4,6 +4,11 @@
 		\item GPU speedup
 		\item But, assumptions on observers
 	\end{itemize}
+	\note{
+		Fast algorithm to compute paths between points on a terrain which uses simplification of the terrain to decrease the processing time.\\
+		Divides the problem into subproblems so it can be executed on the GPU, which makes it faster in practice (but not less complex).\\
+		Assumes the observers are known, or if not, placed logical.
+	}
 \end{frame}
 
 \begin{frame}{Example}
@@ -17,6 +22,8 @@
 	\only<7>{\exampleimg{observers_line_of_sight_all}}%
 	\only<8>{\exampleimg{observers_line_of_sight_all_points}}%
 	\only<9>{\exampleimg{observers_line_of_sight_all_path}}
+	\note{Map w\ observers.\\
+		  Visibility map -> Attenuated visibility map}
 \end{frame}
 
 \begin{frame}{Conclusions}{Computing Highly Occluded Paths Using a Sparse Network}
@@ -37,4 +44,11 @@
 	\only<7>{\exampleimg{network_example1}}%
 	\only<8>{\exampleimg{network_example2}}%
 	\only<9>{\exampleimg{network_example3}}
+	\note{
+		Constructing the network: learning based approach\\
+		choose n source points and for each of these m destination points\\
+		Then compute most occluded paths\\
+		Add the parts to the network where 2 or more paths overlap and then complete your network\\
+		Now we can find occluded paths by connecting the start and end point to the network and finding the best path over the network.
+		}
 \end{frame}
