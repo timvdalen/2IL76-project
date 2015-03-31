@@ -15,6 +15,16 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Example}
+	\centering
+	\only<1>{\exampleimg{grid}}%
+	\only<2>{\exampleimg{grid-0}}%
+	\only<3>{\exampleimg{grid-1}}%
+	\only<4>{\exampleimg{grid-2}}%
+	\only<5>{\exampleimg{grid-3}}%
+	\only<6>{\exampleimg{grid-4}}%
+\end{frame}
+
 \begin{frame}{Computing the map}
 	\begin{itemize}
 		\item Compute the visibility map restricted to part of the tree
@@ -23,15 +33,16 @@
 			}
 		\item Compute the occluder set
 		\item approximate $\tilde{V}_u$
-		%TODO: Notes on how this works
+		\note{
+			The squares that can throw a shadow are the shadow frustrum
+		}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Using the GPU}
 	\begin{itemize}
 		\item GPU is useful for doing many simple calculations
-		\item Reformulate visibility map as typical GPU problem
-		\item Color pixels based on visbility
+		\item Cast rays from observers to square
 		\item Read out color buffer
 	\end{itemize}
 \end{frame}
