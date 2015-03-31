@@ -1,10 +1,36 @@
+\begin{frame}{Idea}
+	\centering
+	\only<1>{\exampleimg{network_ex1}}%
+	\only<2>{\exampleimg{network_ex2}}%
+	\only<3>{\exampleimg{network_ex3}}
+	\note{
+		Suppose we have to find some paths between those poinsts. 
+		Then we first find this path, then we have to compute this path and finally this path.
+		Now you can see that all those paths use the same subpath here. 
+		This subpath is now computed three times, which can become very costly if the size of the subpath increases. 
+		So the idea is to make a network, so that we only have to compute point A, B to the network.
+		After this we can find the lowest weight path between the two points, where A and B connect to the network, to find the path from A to B. 
+	}
+\end{frame}
+
 \begin{frame}{Approach}
 	\begin{itemize}
 		\item Compute the visibility map once
 		\item Determine a network of occluded paths
-		\item Only calculate connections to the network
+		\item Calculate connections to the network
+		\item Calculate shortest connection on the network, between the two connected points. 
 	\end{itemize}
+	note{
+		So the approach now will be to compute the visiblity map once. 
+		This is so that we can find the best occluded paths on the network, which we want to include. 
+		Then we determine a network of the occluded paths that we surely want in the network. 
+		When we have a good network, we can easily find a good occluded path between two points. 
+		We simply find the best occluded path to the network.
+		Then we find the lowest weight connection between the two points on the network. 
+	}
 \end{frame}
+
+
 
 \begin{frame}{Building the network}
 	\begin{itemize}
@@ -16,20 +42,40 @@
 	\end{itemize}
 
 	\note{
-		A network is well chosen when it closely aligns with the lowest-cost subpaths over the terrain.
+		Suppose in our example we have a network like this: 
+		This would result in occluded paths, that are not really useful. 
+		
 	}
+\end{frame}
+
+\begin{frame}{Example networks}
+	\only<1>{\exampleimg{network_fail}}%
+	\only<2>{\exampleimg{network_fail2}}%
+	\only<3>{\exampleimg{network_fail3}}
 \end{frame}
 
 \begin{frame}{Strategies}
 	\begin{itemize}
 		\item Sampling based
-		\item Topology based
 		\item Learning based
+		\item Topology based
 	\end{itemize}
 
 	\note{
-		%TODO: Small explanation about all
-
+		In the paper they explained multiple ways to build the network. 
+		Sampling and learning based are based on the visibility map.
+		They compute a lot of occluded paths on the network. 
+		Then they look which path are most used and include those paths to the network.
+		When the network is not complete yet, they compute the best paths between the subpaths. 
+		The difference between sampling and learning based is the following:
+		Sampling based takes a number of points on the map. 
+		They tried multiple strategies to determine those points. 
+		Then they for each of those points they find the occluded paths to his nearest neighbors.
+		Learning based also takes a number of points. Here they take random points on the border.
+		Then they compute the highest occluded paths to other points on the border. 
+		The occluded paths in the learning based strategy are longer and thus takes more time. 
+		Topology based is based on the terrain and not on the visibility map.
+		Here they try to find local maxima on the terrain and include these points in to the network. 
 		Next, we'll run the learning based approach on our running example
 	}
 \end{frame}
